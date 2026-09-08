@@ -84,8 +84,23 @@ Estimated Revenue / Spend
 ```
 
 ## Screenshots
+### Dashboard
 
-Screenshots coming soon.
+Upload TikTok campaign exports and view saved campaign performance.
+
+![Campaign Tracker Dashboard](screenshots/dashboard.png)
+
+### Campaign Import Preview
+
+Review the metrics extracted from the TikTok Excel export before saving the campaign.
+
+![Campaign Import Preview](screenshots/import-preview.png)
+
+### Campaign Details
+
+Manage campaign status, Spark code, landed-rate and EPC assumptions, and view estimated profitability.
+
+![Campaign Details](screenshots/campaign-details.png)
 
 ## Running Locally
 
