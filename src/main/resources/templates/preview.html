@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Campaign Preview</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Campaign Preview</h1>
+    <a class="back-button" href="/">Back to Dashboard</a>
+
+    <div th:each="campaign : ${campaigns}">
+
+        <form action="/campaign/save" method="post">
+
+            <h2 th:text="${campaign.title}"></h2>
+            <div class="metrics-grid">
+
+                <p>
+                    <span class="metric-label">Spend</span>
+                    <span class="metric-value"
+                          th:text="'$' + ${#numbers.formatDecimal(campaign.spend, 1, 2)}">
+    </span>
+                </p>
+                <p>
+                    <span class="metric-label">CPC</span>
+                    <span class="metric-value"
+                          th:text="'$' + ${#numbers.formatDecimal(campaign.cpc, 1, 2)}">
+    </span>
+                </p>
+                <p>
+                    <span class="metric-label">CPM</span>
+                    <span class="metric-value"
+                          th:text="'$' + ${#numbers.formatDecimal(campaign.cpm, 1, 2)}">
+    </span>
+                </p>
+                <p>
+                    <span class="metric-label">Impressions</span>
+                    <span class="metric-value"
+                          th:text="${campaign.impressions}">
+    </span>
+                </p>
+
+                <p>
+                    <span class="metric-label">Clicks</span>
+                    <span class="metric-value"
+                          th:text="${campaign.clicks}">
+    </span>
+                </p>
+                <p>
+                    <span class="metric-label">CTR</span>
+                    <span class="metric-value"
+                          th:text="${#numbers.formatDecimal(campaign.ctr, 1, 2)} + '%'">
+    </span>
+                </p>
+
+                <p>
+                    <span class="metric-label">Conversions</span>
+                    <span class="metric-value"
+                          th:text="${campaign.conversions}">
+    </span>
+                </p>
+            </div>
+            <div class="preview-save">
+                <label for="sparkCode">Spark Code:</label>
+                <input type="text"
+                       id="sparkCode"
+                       name="sparkCode"
+                       autocomplete="off"
+                       required>
+
+                <input type="hidden" name="title" th:value="${campaign.title}">
+                <input type="hidden" name="clicks" th:value="${campaign.clicks}">
+                <input type="hidden" name="spend" th:value="${campaign.spend}">
+                <input type="hidden" name="cpc" th:value="${campaign.cpc}">
+                <input type="hidden" name="ctr" th:value="${campaign.ctr}">
+                <input type="hidden" name="conversions" th:value="${campaign.conversions}">
+                <input type="hidden" name="cpm" th:value="${campaign.cpm}">
+                <input type="hidden" name="impressions" th:value="${campaign.impressions}">
+
+
+                <button type="submit">Save Campaign</button>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>
+</body>
+</html>

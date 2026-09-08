@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>Campaign Tracker</title>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Campaign Tracker</h1>
+
+    <p class="error-message"
+       th:if="${error}"
+       th:text="${error}">
+    </p>
+
+    <div class="upload-card">
+
+        <h2>Upload your TikTok Campaign Excel</h2>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+
+            <input type="file"
+                   name="file"
+                   accept=".xlsx"
+                   required>
+
+            <button type="submit">Upload</button>
+
+        </form>
+
+    </div>
+
+    <h2>Saved Campaigns</h2>
+
+    <table>
+        <tr>
+            <th>Campaign</th>
+            <th>Status</th>
+            <th>Spend</th>
+            <th>CTR</th>
+            <th>Profit</th>
+            <th>ROAS</th>
+        </tr>
+
+        <tr th:each="campaign : ${campaigns}">
+            <td>
+                <a th:href="@{/campaign/{id}(id=${campaign.id})}"
+                   th:text="${campaign.title}">
+                </a>
+            </td>
+
+            <td>
+                <span class="status"
+                      th:classappend="${campaign.status != null ? campaign.status.name().toLowerCase() : 'testing'}"
+                      th:text="${campaign.status != null ? campaign.status : 'TESTING'}">
+                </span>
+            </td>
+
+            <td th:text="'$' + ${#numbers.formatDecimal(campaign.spend, 1, 2)}"></td>
+
+            <td th:text="${#numbers.formatDecimal(campaign.ctr, 1, 2)} + '%'"></td>
+
+            <td>
+                <span th:class="${campaign.estimatedProfit >= 0 ? 'profit-positive' : 'profit-negative'}"
+                      th:text="${campaign.estimatedProfit < 0
+                          ? '-$' + #numbers.formatDecimal(-campaign.estimatedProfit, 1, 2)
+                          : '$' + #numbers.formatDecimal(campaign.estimatedProfit, 1, 2)}">
+                </span>
+            </td>
+
+            <td>
+                <span th:class="${campaign.roas >= 1 ? 'roas-positive' : 'roas-negative'}"
+                      th:text="${#numbers.formatDecimal(campaign.roas, 1, 2)} + 'x'">
+                </span>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

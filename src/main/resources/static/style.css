@@ -1,0 +1,352 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f6f8;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: #f9fafb;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+td {
+    font-size: 15px;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+td a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #e5e7eb;
+}
+
+.status.testing {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status.scaling {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status.killed {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.upload-card form {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.upload-card button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.upload-card button:hover {
+    background-color: #1d4ed8;
+}
+
+.upload-card input[type="file"]::file-selector-button {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.upload-card input[type="file"]::file-selector-button:hover {
+    background-color: #e5e7eb;
+}
+
+.upload-card {
+    background-color: white;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.upload-card h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.profit-positive {
+    color: #166534;
+    font-weight: 600;
+}
+
+.profit-negative {
+    color: #991b1b;
+    font-weight: 600;
+}
+.roas-positive {
+    color: #166534;
+    font-weight: 600;
+}
+
+.roas-negative {
+    color: #991b1b;
+    font-weight: 600;
+}
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.metrics-grid p {
+    background-color: white;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 0;
+}
+.metric-label {
+    display: block;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.metric-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+.settings-card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.results-grid p {
+    background-color: white;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 0;
+}
+
+.spark-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.spark-form label {
+    font-weight: 600;
+}
+
+.spark-form input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.spark-form button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.spark-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.slider-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 60px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.slider-row label {
+    font-weight: 600;
+}
+
+.slider-row span {
+    font-weight: 600;
+    text-align: right;
+}
+
+.assumptions-form button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.assumptions-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.campaign-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.campaign-header h1 {
+    margin: 0;
+    margin-right: auto;
+}
+
+.campaign-header select {
+    padding: 9px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: white;
+    font-weight: 600;
+}
+
+.campaign-header form:first-of-type button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.campaign-header form:last-of-type button {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.campaign-header form:last-of-type button:hover {
+    background-color: #b91c1c;
+}
+
+.back-button {
+    display: inline-block;
+    color: #374151;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-button:hover {
+    background-color: #f3f4f6;
+}
+
+.preview-save {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: white;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.preview-save label {
+    font-weight: 600;
+}
+
+.preview-save input[type="text"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.preview-save button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.preview-save button:hover {
+    background-color: #1d4ed8;
+}
