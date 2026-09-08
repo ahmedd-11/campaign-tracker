@@ -5,7 +5,9 @@ A Java Spring Boot application for tracking TikTok affiliate marketing campaigns
 ## Why I Built It
 
 TikTok campaign exports contain a lot of data, but I only need a few key metrics to evaluate campaign performance. I built this application to import those metrics, store campaigns, track campaign status, and estimate revenue, profit, and ROAS using my own affiliate assumptions.
+## Live Demo
 
+[View the live application](https://campaign-tracker-1t88.onrender.com)
 ## Features
 
 - Import TikTok campaign data from `.xlsx` files
